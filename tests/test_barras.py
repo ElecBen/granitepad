@@ -1,3 +1,5 @@
+import pytest
+
 from barras import barra
 
 
@@ -15,3 +17,8 @@ def test_barra_a_la_mitad():
 
 def test_barra_no_se_sale_del_ancho():
     assert barra(30, 10, ancho=4) == "[####]"
+
+
+def test_barra_rechaza_un_total_vacio():
+    with pytest.raises(ValueError):
+        barra(1, 0)
