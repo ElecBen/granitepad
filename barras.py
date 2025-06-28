@@ -5,3 +5,8 @@ def barra(parte, total, ancho=20):
     hechos = int(round(ancho * parte / total))
     hechos = max(0, min(ancho, hechos))
     return "[" + "#" * hechos + "-" * (ancho - hechos) + "]"
+
+
+def porcentaje(parte, total, decimales=0):
+    """El avance en tanto por ciento, con los decimales pedidos."""
+    return "%.*f%%" % (decimales, 100.0 * parte / total)
