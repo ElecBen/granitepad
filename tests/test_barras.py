@@ -1,6 +1,6 @@
 import pytest
 
-from barras import barra
+from barras import barra, porcentaje
 
 
 def test_barra_al_empezar():
@@ -22,3 +22,11 @@ def test_barra_no_se_sale_del_ancho():
 def test_barra_rechaza_un_total_vacio():
     with pytest.raises(ValueError):
         barra(1, 0)
+
+
+def test_porcentaje_redondea():
+    assert porcentaje(1, 3) == "33%"
+
+
+def test_porcentaje_con_decimales():
+    assert porcentaje(1, 3, 1) == "33.3%"
