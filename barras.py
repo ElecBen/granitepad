@@ -10,3 +10,9 @@ def barra(parte, total, ancho=20):
 def porcentaje(parte, total, decimales=0):
     """El avance en tanto por ciento, con los decimales pedidos."""
     return "%.*f%%" % (decimales, 100.0 * parte / total)
+
+
+def linea(etiqueta, parte, total, ancho=20):
+    """Junta etiqueta, barra y porcentaje en una linea de terminal."""
+    return "%s %s %4s" % (etiqueta, barra(parte, total, ancho),
+                          porcentaje(parte, total))
