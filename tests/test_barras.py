@@ -1,6 +1,6 @@
 import pytest
 
-from barras import barra, porcentaje
+from barras import barra, linea, porcentaje
 
 
 def test_barra_al_empezar():
@@ -30,3 +30,11 @@ def test_porcentaje_redondea():
 
 def test_porcentaje_con_decimales():
     assert porcentaje(1, 3, 1) == "33.3%"
+
+
+def test_linea_junta_las_tres_piezas():
+    assert linea("bajar", 5, 10, ancho=4) == "bajar [##--]  50%"
+
+
+def test_linea_reserva_sitio_para_el_cien():
+    assert linea("x", 10, 10, ancho=2).endswith("100%")
