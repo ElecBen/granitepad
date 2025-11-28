@@ -1,6 +1,6 @@
 [project]
 name = "granitepad"
-version = "0.1.0"
+version = "0.2.0"
 description = "Dibuja barras de progreso y avisos de avance en texto"
 requires-python = ">=3.9"
 license = { text = "MIT" }
