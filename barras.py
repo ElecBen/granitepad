@@ -1,3 +1,6 @@
+"""Barras de progreso en texto para la terminal."""
+
+
 def barra(parte, total, ancho=20):
     """Dibuja una barra de progreso de `ancho` caracteres."""
     if total <= 0:
