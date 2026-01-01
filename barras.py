@@ -1,5 +1,7 @@
 """Barras de progreso en texto para la terminal."""
 
+__all__ = ["barra", "linea", "porcentaje"]
+
 
 def barra(parte, total, ancho=20):
     """Dibuja una barra de progreso de `ancho` caracteres."""
