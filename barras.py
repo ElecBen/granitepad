@@ -1,9 +1,12 @@
 """Barras de progreso en texto para la terminal."""
 
+from __future__ import annotations
+
 __all__ = ["barra", "linea", "porcentaje"]
 
 
-def barra(parte, total, ancho=20):
+def barra(parte: float, total: float,
+          ancho: int = 20) -> str:
     """Dibuja una barra de progreso de `ancho` caracteres."""
     if total <= 0:
         raise ValueError("total debe ser > 0")
@@ -12,12 +15,14 @@ def barra(parte, total, ancho=20):
     return "[" + "#" * hechos + "-" * (ancho - hechos) + "]"
 
 
-def porcentaje(parte, total, decimales=0):
+def porcentaje(parte: float, total: float,
+               decimales: int = 0) -> str:
     """El avance en tanto por ciento, con los decimales pedidos."""
     return "%.*f%%" % (decimales, 100.0 * parte / total)
 
 
-def linea(etiqueta, parte, total, ancho=20):
+def linea(etiqueta: str, parte: float, total: float,
+          ancho: int = 20) -> str:
     """Junta etiqueta, barra y porcentaje en una linea de terminal."""
     return "%s %s %4s" % (etiqueta, barra(parte, total, ancho),
                           porcentaje(parte, total))
