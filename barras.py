@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-__all__ = ["barra", "linea", "porcentaje"]
+__all__ = ["barra", "linea", "porcentaje", "restante"]
 
 
 def barra(parte: float, total: float,
@@ -26,3 +26,10 @@ def linea(etiqueta: str, parte: float, total: float,
     """Junta etiqueta, barra y porcentaje en una linea de terminal."""
     return "%s %s %4s" % (etiqueta, barra(parte, total, ancho),
                           porcentaje(parte, total))
+
+
+def restante(hechos, total, transcurrido):
+    """Estimacion de los segundos que quedan al ritmo de hasta ahora."""
+    if hechos <= 0:
+        return None
+    return transcurrido * (total - hechos) / hechos
