@@ -1,6 +1,6 @@
 import pytest
 
-from barras import barra, linea, porcentaje
+from barras import barra, linea, porcentaje, restante
 
 
 def test_barra_al_empezar():
@@ -38,3 +38,15 @@ def test_linea_junta_las_tres_piezas():
 
 def test_linea_reserva_sitio_para_el_cien():
     assert linea("x", 10, 10, ancho=2).endswith("100%")
+
+
+def test_restante_a_la_mitad():
+    assert restante(5, 10, 2.0) == 2.0
+
+
+def test_restante_sin_nada_hecho():
+    assert restante(0, 10, 2.0) is None
+
+
+def test_restante_al_acabar():
+    assert restante(10, 10, 2.0) == 0.0
