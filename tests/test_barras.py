@@ -1,6 +1,6 @@
 import pytest
 
-from barras import barra, linea, porcentaje, restante
+from barras import barra, girador, linea, porcentaje, restante
 
 
 def test_barra_al_empezar():
@@ -50,3 +50,15 @@ def test_restante_sin_nada_hecho():
 
 def test_restante_al_acabar():
     assert restante(10, 10, 2.0) == 0.0
+
+
+def test_girador_empieza_por_el_primero():
+    assert girador(0) == "."
+
+
+def test_girador_da_la_vuelta():
+    assert girador(4) == girador(0)
+
+
+def test_girador_acepta_otros_marcos():
+    assert girador(3, marcos="ab") == "b"
