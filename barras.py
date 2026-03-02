@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-__all__ = ["barra", "linea", "porcentaje", "restante"]
+__all__ = ["barra", "girador", "linea", "porcentaje", "restante"]
 
 
 def barra(parte: float, total: float,
@@ -33,3 +33,8 @@ def restante(hechos, total, transcurrido):
     if hechos <= 0:
         return None
     return transcurrido * (total - hechos) / hechos
+
+
+def girador(i, marcos=".oO@"):
+    """El marco de la ruedecilla que toca en el paso i."""
+    return marcos[i % len(marcos)]
