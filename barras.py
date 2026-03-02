@@ -28,13 +28,14 @@ def linea(etiqueta: str, parte: float, total: float,
                           porcentaje(parte, total))
 
 
-def restante(hechos, total, transcurrido):
+def restante(hechos: float, total: float,
+             transcurrido: float) -> float | None:
     """Estimacion de los segundos que quedan al ritmo de hasta ahora."""
     if hechos <= 0:
         return None
     return transcurrido * (total - hechos) / hechos
 
 
-def girador(i, marcos=".oO@"):
+def girador(i: int, marcos: str = ".oO@") -> str:
     """El marco de la ruedecilla que toca en el paso i."""
     return marcos[i % len(marcos)]
