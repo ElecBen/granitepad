@@ -27,3 +27,11 @@ docs/      notas de diseno
 | `linea(etiqueta, parte, total, ancho)` | la etiqueta, la barra y el porcentaje en una sola linea |
 | `restante(hechos, total, transcurrido)` | los segundos que quedan al ritmo actual, o None |
 | `girador(i, marcos)` | el marco de la ruedecilla que toca en cada paso |
+
+## Medir
+
+El banco de pruebas vive en `bench/` y se lanza como modulo, siempre desde la raiz del repo:
+
+```
+python -m bench.medir
+```
