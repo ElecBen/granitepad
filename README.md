@@ -1,5 +1,7 @@
 # granitepad
 
+![tests](https://github.com/ElecBen/granitepad/actions/workflows/tests.yml/badge.svg)
+
 Dibuja barras de progreso y avisos de avance en texto.
 
 ## Uso
